@@ -1,7 +1,9 @@
+import Logo from "../Components/Logo";
+
 const Header = () => {
   return (
-    <header>
-      <h2>This is header</h2>
+    <header className="p-8 bg-primary flex justify-center">
+      <Logo isDark={true} />
     </header>
   );
 };
