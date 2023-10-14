@@ -26,7 +26,10 @@ const ProductCard = () => {
         >
           <BsFillEyeFill />
         </Link>
-        <Link className="inline-block bg-primary p-2 rounded-md">
+        <Link
+          to={`/product/update/1`}
+          className="inline-block bg-primary p-2 rounded-md"
+        >
           <BsPencilFill />
         </Link>
         <button className="bg-red-600 p-2 rounded-md">

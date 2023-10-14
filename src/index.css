@@ -17,7 +17,7 @@
 
 @layer components {
   .container-area {
-    @apply container mx-auto;
+    @apply container max-w-5xl mx-auto px-5 xl:px-0;
   }
   .section-heading {
     @apply font-primary text-primary text-4xl;
@@ -30,5 +30,8 @@
   }
   .btn-primary {
     @apply bg-secondary text-primary hover:bg-secondary-shadow;
+  }
+  .form-input {
+    @apply w-full py-2 px-5 text-base rounded-md;
   }
 }

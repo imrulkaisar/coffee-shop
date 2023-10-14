@@ -13,9 +13,9 @@ const Footer = () => {
         background: `url(${footerBg})`,
         backgroundSize: "cover",
       }}
-      className={`py-32`}
+      className={`py-20 md:py-32`}
     >
-      <div className="container-area flex gap-10">
+      <div className="container-area md:flex space-y-8 md:space-y-0 gap-10">
         <div className="flex-1 space-y-8">
           <div>
             <Logo />

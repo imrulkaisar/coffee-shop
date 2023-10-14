@@ -4,19 +4,19 @@ const ContactFrom = () => {
   return (
     <form className="space-y-4">
       <input
-        className="w-full py-2 px-5 text-md rounded-md"
+        className="form-input"
         type="text"
         name="name"
         placeholder="Full name"
       />
       <input
-        className="w-full py-2 px-5 text-md rounded-md"
+        className="form-input"
         type="email"
         name="email"
         placeholder="Email address"
       />
       <textarea
-        className="w-full py-2 px-5 text-md rounded-md min-h-[120px]"
+        className="form-input min-h-[120px]"
         name="message"
         placeholder="Your message"
       ></textarea>

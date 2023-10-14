@@ -16,6 +16,7 @@ import image5 from "../assets/images/cups/Rectangle13.png";
 import image6 from "../assets/images/cups/Rectangle14.png";
 import image7 from "../assets/images/cups/Rectangle15.png";
 import image8 from "../assets/images/cups/Rectangle16.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -44,7 +45,7 @@ const Home = () => {
 
       {/* Features section */}
       <section className="bg-bgGray py-16">
-        <div className="container-area md:flex md:flex-wrap lg:flex-nowrap justify-center gap-6">
+        <div className="container-area flex flex-wrap lg:flex-nowrap justify-center gap-6">
           <IconBox icon={icon1} title="Awesome Aroma">
             You will definitely be a fan of the design & aroma of your coffee
           </IconBox>
@@ -67,11 +68,14 @@ const Home = () => {
             <div className="flex flex-col items-center gap-2">
               <p>--- Sip & Savor ---</p>
               <h2 className="section-heading">Our Popular Products</h2>
-              <button className="btn btn-primary mt-3 flex gap-2 items-center border-2 border-primary">
+              <Link
+                to="/add"
+                className="btn btn-primary mt-3 flex gap-2 items-center border-2 border-primary"
+              >
                 Add Coffee <BsCup className="text-primary" />
-              </button>
+              </Link>
             </div>
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-2 gap-8">
               <ProductCard />
               <ProductCard />
               <ProductCard />
