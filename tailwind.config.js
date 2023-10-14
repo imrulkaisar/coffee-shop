@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: "Rancho', cursive",
+        primary: "'Rancho', cursive",
         secondary: "'Raleway', sans-serif",
       },
       colors: {
