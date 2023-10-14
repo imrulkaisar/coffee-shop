@@ -13,6 +13,8 @@ export default {
         "secondary-shadow": "#D2B48C",
         heading: "#1B1A1A",
         text: "#5C5B5B",
+        bgGray: "#ECEAE3",
+        bgGrayOverlay: "rgba(236, 234, 227, 0.6)",
       },
     },
   },
