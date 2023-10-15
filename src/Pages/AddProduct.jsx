@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { HiArrowLongLeft } from "react-icons/hi2";
+import productBg from "../assets/images/bg/productbg.png";
 
 const AddProduct = () => {
   return (
     <div>
-      <section className="bg-[url('/../src/assets/images/bg/productbg.png')] bg-top bg-contain py-16">
+      <section
+        style={{
+          backgroundImage: `url('${productBg}')`,
+        }}
+        className="bg-top bg-contain py-16"
+      >
         <div className="container-area space-y-8">
           <Link
             to="/"

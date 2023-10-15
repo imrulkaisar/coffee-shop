@@ -1,6 +1,9 @@
 import IconBox from "../Components/IconBox";
 import { BsCup } from "react-icons/bs";
 
+import heroBg from "../assets/images/bg/hero-bg.png";
+import pagebg from "../assets/images/bg/page-bg.png";
+
 import icon1 from "../assets/images/icons/1.png";
 import icon2 from "../assets/images/icons/2.png";
 import icon3 from "../assets/images/icons/3.png";
@@ -23,7 +26,10 @@ const Home = () => {
     <>
       {/* Hero section */}
       <section
-        className="bg-[url('/../src/assets/images/bg/hero-bg.png')] bg-cover bg-left-bottom"
+        style={{
+          backgroundImage: `url('${heroBg}')`,
+        }}
+        className="bg-cover bg-left-bottom"
         id="Hero"
       >
         <div className="overlay py-32">
@@ -62,7 +68,12 @@ const Home = () => {
       </section>
 
       {/* page body */}
-      <section className="bg-[url('/../src/assets/images/bg/page-bg.png')] bg-top bg-contain py-20 ">
+      <section
+        style={{
+          backgroundImage: `url('${pagebg}')`,
+        }}
+        className="bg-top bg-contain py-20 "
+      >
         <div className="container-area space-y-16">
           <div className="space-y-10">
             <div className="flex flex-col items-center gap-2">
