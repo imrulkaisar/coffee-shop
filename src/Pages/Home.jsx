@@ -1,5 +1,6 @@
 import IconBox from "../Components/IconBox";
 import { BsCup } from "react-icons/bs";
+import { apiURL } from "../Contexts/GlobalContext";
 
 import heroBg from "../assets/images/bg/hero-bg.png";
 import pagebg from "../assets/images/bg/page-bg.png";
@@ -20,8 +21,19 @@ import image6 from "../assets/images/cups/Rectangle14.png";
 import image7 from "../assets/images/cups/Rectangle15.png";
 import image8 from "../assets/images/cups/Rectangle16.png";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch(`${apiURL}/products`)
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, [products]);
+
+  console.log(products);
+
   return (
     <>
       {/* Hero section */}
@@ -87,12 +99,9 @@ const Home = () => {
               </Link>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
+              {products.map((product) => (
+                <ProductCard key={product._id} data={product} />
+              ))}
             </div>
           </div>
 

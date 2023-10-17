@@ -1,8 +1,59 @@
 import { Link } from "react-router-dom";
 import { HiArrowLongLeft } from "react-icons/hi2";
+import Swal from "sweetalert2";
+import { apiURL } from "../Contexts/GlobalContext";
+
 import productBg from "../assets/images/bg/productbg.png";
 
 const AddProduct = () => {
+  const handleAddProduct = (event) => {
+    event.preventDefault();
+    const form = event.target;
+
+    const title = form.title.value;
+    const chef = form.chef.value;
+    const supplier = form.supplier.value;
+    const taste = form.taste.value;
+    const category = form.category.value;
+    const price = form.price.value;
+    const photo = form.photo.value;
+    const details = form.details.value;
+
+    const product = {
+      title,
+      chef,
+      supplier,
+      taste,
+      category,
+      price,
+      photo,
+      details,
+    };
+
+    console.log(product);
+
+    fetch(`${apiURL}/products`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            icon: "success",
+            title: "Product has been added!",
+            showConfirmButton: false,
+          });
+          form.reset();
+        }
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div>
       <section
@@ -30,7 +81,7 @@ const AddProduct = () => {
               </p>
             </div>
 
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleAddProduct}>
               <div className="grid lg:grid-cols-2 gap-4">
                 <input
                   className="form-input"
@@ -84,7 +135,7 @@ const AddProduct = () => {
               />
               <textarea
                 className="form-input min-h-[200px]"
-                name="detail"
+                name="details"
                 id="details"
                 placeholder="Product details"
               ></textarea>

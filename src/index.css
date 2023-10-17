@@ -31,6 +31,9 @@
   .btn-primary {
     @apply bg-secondary text-primary hover:bg-secondary-shadow;
   }
+  .form-group {
+    @apply text-sm space-y-1;
+  }
   .form-input {
     @apply w-full py-2 px-5 text-base rounded-md;
   }
